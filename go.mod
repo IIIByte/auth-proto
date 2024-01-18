@@ -1,4 +1,4 @@
-module github.com/xbytee/auth-proto
+module github.com/xbytee/auth-protos
 
 go 1.20
 
