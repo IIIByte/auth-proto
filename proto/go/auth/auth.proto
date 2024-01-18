@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "xbytee.auth.v1;authv1";
+
+service Auth {
+  rpc Register (RegisterReq) returns (RegisterResp);
+
+  rpc Login (LoginReq) returns (LoginResp);
+
+  rpc IsAdmin (IsAdminReq) returns (IsAdminResp);
+}
+
+message IsAdminReq {
+  int64 user_id = 1;
+}
+
+message IsAdminResp {
+  bool is_admin = 1;
+}
+
+message RegisterReq {
+  string email = 1;
+  string password = 2;
+}
+
+message RegisterResp {
+  int64 user_id = 1;
+}
+
+message LoginReq {
+  string email = 1;
+  string password = 2;
+}
+
+message LoginResp {
+  string access_token = 1;
+  string refrash_token = 2;
+}
