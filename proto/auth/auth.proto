@@ -2,22 +2,12 @@ syntax = "proto3";
 
 package auth;
 
-option go_package = "xbytee.auth.v1;authv1";
+option go_package = "IIIByte.auth.v1;authv1";
 
 service Auth {
   rpc Register (RegisterReq) returns (RegisterResp);
 
   rpc Login (LoginReq) returns (LoginResp);
-
-  rpc IsAdmin (IsAdminReq) returns (IsAdminResp);
-}
-
-message IsAdminReq {
-  int64 user_id = 1;
-}
-
-message IsAdminResp {
-  bool is_admin = 1;
 }
 
 message RegisterReq {
@@ -37,4 +27,5 @@ message LoginReq {
 message LoginResp {
   string access_token = 1;
   string refrash_token = 2;
+  string life_time = 3;
 }

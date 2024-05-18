@@ -1,6 +1,6 @@
-module github.com/xbytee/auth-proto
+module github.com/IIIByte/auth-proto
 
-go 1.20
+go 1.21
 
 require (
 	google.golang.org/grpc v1.60.1
